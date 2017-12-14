@@ -1,7 +1,7 @@
 
 body {
-	width: 300px;
-	height: 500px;
+	width: 960px;
+	height: auto;
 	background: rgba(0, 0, 0, .75);
 	margin: 0 auto;
 	padding: none;
@@ -12,23 +12,43 @@ h1 {
 	font-style: bold;
 	text-align: center;
 	size: 36px;	
+	padding: 20px 0;
 }
-.btn {
-	background-color: rgba(213, 200, 182, .5);
-	border-radius: 5px;
-	padding: 10px;
+
+#quiz {
+	width: 50%;
+	height: 100%;
+	background: rgba(255, 255, 255, .2);
+	border-radius: 10px;
+	margin: 0 auto;
+	text-align: left;
+	padding: 20px;
+}
+
+#btn {
+	background-color: rgba(246, 197, 131, .5);
 	text-align: center;
 	text-decoration: none;
 	display: inline-block;;
 	font-size: 18px;
-	position: relative;
+	border: none;
 }
 button {
 	height: 30px;
 	width: 100px;
+	border-radius: 5px;
+	text-align: center;
+	margin: 0 auto;
+
 }
 
+.gameButton {
+	width: 100%;
+	margin: 0 auto;
+	display: inline-block;
+	align-content: center;
 
+}
 
 
 
