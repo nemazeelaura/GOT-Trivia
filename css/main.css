@@ -1,0 +1,45 @@
+
+body {
+	width: 300px;
+	height: 500px;
+	background: rgba(0, 0, 0, .75);
+	margin: 0 auto;
+	padding: none;
+	font-family: 'Open Sans', sans-serif;	
+}
+
+h1 {
+	font-style: bold;
+	text-align: center;
+	size: 36px;	
+}
+.btn {
+	background-color: rgba(213, 200, 182, .5);
+	border-radius: 5px;
+	padding: 10px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;;
+	font-size: 18px;
+	position: relative;
+}
+button {
+	height: 30px;
+	width: 100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
