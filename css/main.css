@@ -6,8 +6,9 @@ body {
 	background: rgba(9, 3, 2, 1);
 	background-image: url("../images/throne.png");
 	background-repeat: no-repeat;
-	background-attachment: fixed;
-    background-position: center;
+/*	background-attachment: fixed;
+    background-position: center;*/
+    background-size: cover;
 	margin: 0 auto;
 	padding-top: 20px;
 	font-family: 'Open Sans', sans-serif;	
