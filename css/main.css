@@ -61,9 +61,19 @@ button {
 	padding-bottom: 20px;
 }
 
-
-
-
+#results {
+	width: 30%;
+	height: 100%;
+	background: none;
+	border-radius: 10px;
+	margin: 20px auto;
+	text-align: left;
+	padding: 20px;
+	color: rgba(11, 5, 5, 1);
+}
+#answer1{
+	padding-top: 5px;
+}
 
 
 

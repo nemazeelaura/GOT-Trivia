@@ -18,29 +18,29 @@ var allQuestions = [];
 var score = 0;
 
 // question and answer constructor
-function Trivia(questionParam, answerOneParam, answerTwoParam, answerThreeParam, answerCorrectParam, isCorrectParam, isWrongParam) {
+function Trivia(questionParam, answerOneParam, answerTwoParam, answerThreeParam, answerCorrectParam, youWinParam, youLoseParam) {
    this.question = questionParam;
 	 this.answerOne = answerOneParam;
 	 this.answerTwo = answerTwoParam;
 	 this.answerThree = answerThreeParam;
    this.answerCorrect = answerCorrectParam;
-   this.isCorrect = isCorrectParam;
-   this.isWrong = isWrongParam;
+   this.youWin = youWinParam;
+   this.youLose = youLoseParam;
 	
 	this.firstQuestion = function () {
 	console.log('look at me!');	
 };
 }
 // creating first five questions and answers
-var firstQuestion = new Trivia(' What is the name of Jon Snows dire wolf?', 'Grey Wind', 'Ghost', 'Nymeria', 'Ghost', 'you are correct!', 'wrong, valar morghulis'); 
+var firstQuestion = new Trivia(' What is the name of Jon Snows dire wolf?', 'Grey Wind', 'Ghost', 'Nymeria', 'Ghost', 'You win, Sit on the Iron Throne', 'You are dead, When you play the Games of Thrones you win or you die, Valar Morghulis'); 
 
-var secondQuestion = new Trivia('I always hated crossbows. Take too long to load!', 'Rodrik Cassel ', 'Robb Stark ', 'Yoren', 'Yoren', 'you are correct!', 'wrong, valar morghulis');
+var secondQuestion = new Trivia('I always hated crossbows. Take too long to load!', 'Rodrik Cassel ', 'Robb Stark ', 'Yoren', 'Yoren', 'You win, Sit on the Iron Throne', 'You are dead, When you play the Games of Thrones you win or you die, Valar Morghulis');
 
-var thirdQuestion = new Trivia('In season 2, who does Tyrion tell Varys he is planning on marrying to Princess Myrcella?', 'Robin Arryn of the Vale', 'Theon Greyjoy', 'Martells of Dorne', 'Theon Greyjoy', 'you are correct!', 'wrong, valar morghulis');
+var thirdQuestion = new Trivia('In season 2, who does Tyrion tell Varys he is planning on marrying to Princess Myrcella?', 'Robin Arryn of the Vale', 'Theon Greyjoy', 'Martells of Dorne', 'Theon Greyjoy', 'You win, Sit on the Iron Throne', 'You are dead, When you play the Games of Thrones you win or you die, Valar Morghulis');
 
-var fourthQuestion = new Trivia('Which religion does the Brotherhood Without Banners preach?', 'Rhllor, the Lord of Light', 'Faith of the Seven', 'The Old Gods', 'Rhllor, the Lord of Light', 'you are correct!', 'wrong, valar morghulis');
+var fourthQuestion = new Trivia('Which religion does the Brotherhood Without Banners preach?', 'Rhllor, the Lord of Light', 'Faith of the Seven', 'The Old Gods', 'Rhllor, the Lord of Light', 'You win, Sit on the Iron Throne', 'You are dead, When you play the Games of Thrones you win or you die, Valar Morghulis');
 
-var fifthQuestion = new Trivia('It was Jon Arryns sudden death that brought Ned Stark to Kings Landing, where he sought the truth behind Lord Arryns demise. Who actually killed Roberts first "Hand of the King?"', 'Petyr Baelish', 'Lysa Arryn', 'Varys', 'Lysa Arryn', 'you are correct!', 'wrong, valar morghulis');    
+var fifthQuestion = new Trivia('It was Jon Arryns sudden death that brought Ned Stark to Kings Landing, where he sought the truth behind Lord Arryns demise. Who actually killed Roberts first "Hand of the King?"', 'Petyr Baelish', 'Lysa Arryn', 'Varys', 'Lysa Arryn', 'You win, Sit on the Iron Throne', 'You are dead, When you play the Games of Thrones you win or you die, Valar Morghulis');    
 
 // putting the questions in the array
 allQuestions.push(firstQuestion, secondQuestion, thirdQuestion, fourthQuestion, fifthQuestion);
@@ -81,7 +81,7 @@ var  getQuestion = function(trivia) {
         answerTwoDiv.addEventListener('click', function(){
          
             console.log(this.innerHTML);
-            console.log(Trivia.answerCorrect);
+            console.log(trivia.answerCorrect);
          checkAnswer(this.innerHTML, trivia.answerCorrect);
         });
 
@@ -119,8 +119,7 @@ var checkAnswer = function(a, b){
       } else {
         getResults();
       }
-
-      
+     
    } else {
       alert('wrong');
           if (questionCounter <= 4){ 
@@ -133,30 +132,51 @@ var checkAnswer = function(a, b){
 
 getQuestion(allQuestions[questionCounter]);
 
-
-
 var getResults = function(){
-//logic for getting reult of quiz 
 
-   if (questionCounter >= 5){
-      getResults(questionCounter);
-   } else {
-    
-    var results = document.createElement('div');
-    results.innerText = trivia.question;
-    putQuestionOnPage.appendChild(results);
-    console.log(results);
+       putQuestionOnPage.innerHTML = 'FINAL SCORE';
+       putQuestionOnPage.style.backgroundColor = '#f4f1e7';
+       var results = document.createElement('div');
 
-      // var results = document.createElement('div');
-      // results.innerText = trivia.isWrong;
-      // resultsDiv.appendChild(results);
-      // console.log('valar morghulis');
+   if (score >= 5) { 
 
-   }
+      resultsDiv.style.backgroundColor = '#f4f1e7';  
+      results.innerText = 'All 5 correct, you will sit on the Iron Throne';
+      console.log(results);
+        
+  } else {
+      
+      resultsDiv.style.backgroundColor = '#f4f1e7';  
+      results.innerText = 'Less than 5 correct. You know nothing, Turncloak';
+      console.log(resultsDiv);
+
+      }   
+      
+  resultsDiv.appendChild(results);
 };
 
+// var getResults = function(){
+// //logic for getting reult of quiz 
 
-getResults(allQuestions[questionCounter]);
+//    if (questionCounter >= 5){
+//       var results = document.createElement('div');
+//       results.innerText = trivia.question;
+//       putQuestionOnPage.appendChild(results);
+//       console.log(results);
+//    } else {
+    
+    
+
+//       // var results = document.createElement('div');
+//       // results.innerText = trivia.isWrong;
+//       // resultsDiv.appendChild(results);
+//       // console.log('valar morghulis');
+
+//    }
+// };
+
+
+// getResults(allQuestions[questionCounter]);
 
 
      // putQuestionOnPage.innerText = allQuestions[i].question;
