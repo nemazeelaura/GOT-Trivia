@@ -1,6 +1,6 @@
 
 // var trivia = {
-// 	question: 'first question',
+// 	  question: 'first question',
 //   	answerOne: 'answer 1',
 //   	answerTwo: 'answer 2',
 //   	answerThree: 'answer 3',
@@ -15,13 +15,14 @@ var resultsDiv = document.getElementById('results');
 var questionCounter = 0;
 // array to hold the questions
 var allQuestions = [];
+var score = 0;
 
 // question and answer constructor
 function Trivia(questionParam, answerOneParam, answerTwoParam, answerThreeParam, answerCorrectParam, isCorrectParam, isWrongParam) {
-  	this.question = questionParam;
-	this.answerOne = answerOneParam;
-	this.answerTwo = answerTwoParam;
-	this.answerThree = answerThreeParam;
+   this.question = questionParam;
+	 this.answerOne = answerOneParam;
+	 this.answerTwo = answerTwoParam;
+	 this.answerThree = answerThreeParam;
    this.answerCorrect = answerCorrectParam;
    this.isCorrect = isCorrectParam;
    this.isWrong = isWrongParam;
@@ -31,15 +32,15 @@ function Trivia(questionParam, answerOneParam, answerTwoParam, answerThreeParam,
 };
 }
 // creating first five questions and answers
-var firstQuestion = new Trivia(' What is the name of Jons dire wolf?', 'Grey Wind', 'Ghost', 'Nymeria', 'Ghost', 'you are correct!', 'wrong, bend the knee'); 
+var firstQuestion = new Trivia(' What is the name of Jon Snows dire wolf?', 'Grey Wind', 'Ghost', 'Nymeria', 'Ghost', 'you are correct!', 'wrong, valar morghulis'); 
 
-var secondQuestion = new Trivia('I always hated crossbows. Take too long to load!', 'Rodrik Cassel ', 'Robb Stark ', 'Yoren', 'Yoren', 'you are correct!', 'wrong, bend the knee');
+var secondQuestion = new Trivia('I always hated crossbows. Take too long to load!', 'Rodrik Cassel ', 'Robb Stark ', 'Yoren', 'Yoren', 'you are correct!', 'wrong, valar morghulis');
 
-var thirdQuestion = new Trivia('In season 2, who does Tyrion tell Varys he is planning on marrying to Princess Myrcella?', 'Robin Arryn of the Vale', 'Theon Greyjoy', 'Martells of Dorne', 'Theon Greyjoy', 'you are correct!', 'wrong, bend the knee');
+var thirdQuestion = new Trivia('In season 2, who does Tyrion tell Varys he is planning on marrying to Princess Myrcella?', 'Robin Arryn of the Vale', 'Theon Greyjoy', 'Martells of Dorne', 'Theon Greyjoy', 'you are correct!', 'wrong, valar morghulis');
 
-var fourthQuestion = new Trivia('Which religion does the Brotherhood Without Banners preach?', 'Rhllor, the Lord of Light', 'Faith of the Seven', 'The Old Gods', 'Rhllor, the Lord of Light', 'you are correct!', 'wrong, bend the knee');
+var fourthQuestion = new Trivia('Which religion does the Brotherhood Without Banners preach?', 'Rhllor, the Lord of Light', 'Faith of the Seven', 'The Old Gods', 'Rhllor, the Lord of Light', 'you are correct!', 'wrong, valar morghulis');
 
-var fifthQuestion = new Trivia('It was Jon Arryns sudden death that brought Ned Stark to Kings Landing, where he sought the truth behind Lord Arryns demise. Who actually killed Roberts first "Hand of the King?"', 'Petyr Baelish', 'Lysa Arryn ', 'Varys', 'Lysa Arryn', 'you are correct!', 'wrong, bend the knee');    
+var fifthQuestion = new Trivia('It was Jon Arryns sudden death that brought Ned Stark to Kings Landing, where he sought the truth behind Lord Arryns demise. Who actually killed Roberts first "Hand of the King?"', 'Petyr Baelish', 'Lysa Arryn', 'Varys', 'Lysa Arryn', 'you are correct!', 'wrong, valar morghulis');    
 
 // putting the questions in the array
 allQuestions.push(firstQuestion, secondQuestion, thirdQuestion, fourthQuestion, fifthQuestion);
@@ -80,7 +81,7 @@ var  getQuestion = function(trivia) {
         answerTwoDiv.addEventListener('click', function(){
          
             console.log(this.innerHTML);
-            console.log(trivia.answerCorrect);
+            console.log(Trivia.answerCorrect);
          checkAnswer(this.innerHTML, trivia.answerCorrect);
         });
 
@@ -94,7 +95,6 @@ var  getQuestion = function(trivia) {
          checkAnswer(this.innerHTML, trivia.answerCorrect);
         });
 
-
         // var answerFourDiv = document.createElement('div');
         // answerFourDiv.setAttribute("id", "answer4"); 
         // answerFourDiv.innerText = trivia.answerCorrect;
@@ -104,9 +104,8 @@ var  getQuestion = function(trivia) {
         //  console.log(this.innerHTML, checkAnswer);
         //  checkAnswer(this.innerHTML, trivia.answerCorrect);
         // });
+
         questionCounter++;
-
-
    // }
 };
 var checkAnswer = function(a, b){
@@ -114,11 +113,21 @@ var checkAnswer = function(a, b){
 
    if(a === b){
       alert('correct');
-      getQuestion(allQuestions[questionCounter]);
+      score++;
+      if (questionCounter <= 4) { 
+      getQuestion(allQuestions[questionCounter]); 
+      } else {
+        getResults();
+      }
+
+      
    } else {
       alert('wrong');
-      getQuestion(allQuestions[questionCounter]);
-
+          if (questionCounter <= 4){ 
+      getQuestion(allQuestions[questionCounter]); 
+      }   else {
+        getResults();
+      }
    }
 };
 
@@ -126,6 +135,28 @@ getQuestion(allQuestions[questionCounter]);
 
 
 
+var getResults = function(){
+//logic for getting reult of quiz 
+
+   if (questionCounter >= 5){
+      getResults(questionCounter);
+   } else {
+    
+    var results = document.createElement('div');
+    results.innerText = trivia.question;
+    putQuestionOnPage.appendChild(results);
+    console.log(results);
+
+      // var results = document.createElement('div');
+      // results.innerText = trivia.isWrong;
+      // resultsDiv.appendChild(results);
+      // console.log('valar morghulis');
+
+   }
+};
+
+
+getResults(allQuestions[questionCounter]);
 
 
      // putQuestionOnPage.innerText = allQuestions[i].question;
