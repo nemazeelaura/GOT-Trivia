@@ -24,7 +24,11 @@ Game functionality:
 File set up:
 	Used three files: index.html, main.css style sheet and main.js javascript file for functionality
 
+things i need to fix - I can't get the index page and game page title and button to match ven though they are styled the same.
 
+*************************
+would like to add - shuffle the questions
+better way to store the questions
 
 
 *************************

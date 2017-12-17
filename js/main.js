@@ -1,5 +1,4 @@
 
-
 // variables to store questions on the page
 var putQuestionOnPage = document.getElementById('quiz');
 var resultsDiv = document.getElementById('results');            
@@ -23,7 +22,7 @@ function Trivia(questionParam, answerOneParam, answerTwoParam, answerThreeParam,
 };
 }
 // creating first five questions and answers
-var firstQuestion = new Trivia(' What is the name of Jon Snows dire wolf?', '1. Grey Wind', '2. Ghost', '3. Nymeria', '2. Ghost', 'You win, Sit on the Iron Throne', 'You are dead, When you play the Games of Thrones you win or you die, Valar Morghulis'); 
+var firstQuestion = new Trivia(' What is the name of Jon Snow\'s dire wolf?', '1. Grey Wind', '2. Ghost', '3. Nymeria', '2. Ghost', 'You win, Sit on the Iron Throne', 'You are dead, When you play the Games of Thrones you win or you die, Valar Morghulis'); 
 
 var secondQuestion = new Trivia('I always hated crossbows. Take too long to load!', '1. Rodrik Cassel ', '2. Robb Stark ', '3. Yoren', '3. Yoren', 'You win, Sit on the Iron Throne', 'You are dead, When you play the Games of Thrones you win or you die, Valar Morghulis');
 
@@ -31,10 +30,20 @@ var thirdQuestion = new Trivia('In season 2, who does Tyrion tell Varys he is pl
 
 var fourthQuestion = new Trivia('Which religion does the Brotherhood Without Banners preach?', '1. Rhllor, the Lord of Light', '2. Faith of the Seven', '3. The Old Gods', '1. Rhllor, the Lord of Light', 'You win, Sit on the Iron Throne', 'You are dead, When you play the Games of Thrones you win or you die, Valar Morghulis');
 
-var fifthQuestion = new Trivia('It was Jon Arryns sudden death that brought Ned Stark to Kings Landing, where he sought the truth behind Lord Arryns demise. Who actually killed Roberts first "Hand of the King?"', '1. Petyr Baelish', '2. Lysa Arryn', '3. Varys', '2. Lysa Arryn', 'You win, Sit on the Iron Throne', 'You are dead, When you play the Games of Thrones you win or you die, Valar Morghulis');    
+var fifthQuestion = new Trivia('It was Jon Arryns sudden death that brought Ned Stark to Kings Landing, where he sought the truth behind Lord Arryn\'s demise. Who actually killed Roberts first "Hand of the King?"', '1. Petyr Baelish', '2. Lysa Arryn', '3. Varys', '2. Lysa Arryn', 'You win, Sit on the Iron Throne', 'You are dead, When you play the Games of Thrones you win or you die, Valar Morghulis');    
 
-// putting the questions in the array
-allQuestions.push(firstQuestion, secondQuestion, thirdQuestion, fourthQuestion, fifthQuestion);
+var sixQ = new Trivia('Which is the main color of House Tarly\'s sigil?', '1. Green', '2. Yellow', '3. Purple', '1. Green', 'You win, Sit on the Iron Throne', 'You are dead, When you play the Games of Thrones you win or you die, Valar Morghulis');    
+
+var sevenQ = new Trivia('The Water Gardens belong to which constituency of Westeros?', '1. The Riverlands', '2. Iron Islands', '3. Dorne', '3. Dorne', 'You win, Sit on the Iron Throne', 'You are dead, When you play the Games of Thrones you win or you die, Valar Morghulis');  
+
+var eightQ = new Trivia('In the first episode, King Robert Baratheon says "In my dreams, I kill him every night." To whom is the King referring and why?', '1. John Arryn', '2. Stannis Baratheon', '3. Rhaegar Targaryen', '3. Rhaegar Targaryen', 'You win, Sit on the Iron Throne', 'You are dead, When you play the Games of Thrones you win or you die, Valar Morghulis');  
+
+var nineQ = new Trivia('At the end of his training, what must an Unsullied kill to prove he has no mercy or weakness?', '1. A newborn slave child', '2. Wildling', '3. Harpy', '1. newborn slave child', 'You win, Sit on the Iron Throne', 'You are dead, When you play the Games of Thrones you win or you die, Valar Morghulis'); 
+
+var tenQ = new Trivia('said, Say it. Say her name. Say it!', '1. Joffrey Baratheon', '2. Oberyn Martell', '3. Rorge', '2. Oberyn Martell', 'You win, Sit on the Iron Throne', 'You are dead, When you play the Games of Thrones you win or you die, Valar Morghulis');    
+
+// putting the questions in the array.. added more questions shortened var names
+allQuestions.push(firstQuestion, secondQuestion, thirdQuestion, fourthQuestion, fifthQuestion, sixQ, sevenQ, eightQ, nineQ, tenQ);
 
 
 // linking start button to game page... having trouble with this
@@ -100,7 +109,7 @@ var checkAnswer = function(a, b){
    if(a === b){
       alert('correct');
       score++;
-      if (questionCounter <= 4) { 
+      if (questionCounter <= 9) { 
       getQuestion(allQuestions[questionCounter]); 
       } else {
         getResults();
@@ -108,7 +117,7 @@ var checkAnswer = function(a, b){
      
    } else {
       alert('wrong');
-          if (questionCounter <= 4){ 
+          if (questionCounter <= 9){ 
       getQuestion(allQuestions[questionCounter]); 
       }   else {
         getResults();
@@ -119,7 +128,7 @@ var checkAnswer = function(a, b){
 getQuestion(allQuestions[questionCounter]);
 
 // getting results of total correct answers
-// displays final score win/lose scenario
+// displays final score win/lose scenario plus actual score. I put in empty div tag
 
 var getResults = function(){
 
@@ -127,7 +136,7 @@ var getResults = function(){
        putQuestionOnPage.style.backgroundColor = '#f4f1e7';
        var results = document.createElement('div');
 
-   if (score >= 5) { 
+   if (score >= 10) { 
 
       resultsDiv.style.backgroundColor = '#f4f1e7';  
       results.innerText = 'You will sit on the Iron Throne';
