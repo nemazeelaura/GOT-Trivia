@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>GOT Trivia</title>
+	<title>game</title>
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Spectral+SC" rel="stylesheet">
 
 	<link rel="stylesheet" type="text/css" href="css/main.css">
@@ -11,14 +11,12 @@
 	<header></header>
 	
 	<h1>GOT-Trivia</h1>
-<!-- 	start game on click -->
 	<center><div class="gameButton">
-		<button onClick="location.href = 'game.html';" id="btn">PLAY</button>
+	<!-- 	resets page -->
+		<button onClick="history.go(0)" id="resetBtn">Reset</button>
 	</div></center>
-
-	<!--moved to game page-->
-	<!-- <center><div id="quiz"></div><center>
-	<div id="results"></div> -->
+	<center><div id="quiz"></div><center>
+	<div id="results"></div>
 
 
   	<script type="text/javascript" src="js/main.js"></script>

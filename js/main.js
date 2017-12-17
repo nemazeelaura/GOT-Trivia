@@ -1,5 +1,4 @@
 
-// start game button
 
 // variables to store questions on the page
 var putQuestionOnPage = document.getElementById('quiz');
@@ -37,8 +36,9 @@ var fifthQuestion = new Trivia('It was Jon Arryns sudden death that brought Ned 
 // putting the questions in the array
 allQuestions.push(firstQuestion, secondQuestion, thirdQuestion, fourthQuestion, fifthQuestion);
 
-// var start = getElementById('btn');
-// start.addEventListener("click", getQuestion(), false);
+
+// linking start button to game page... having trouble with this
+
 
 // creating div to hold question/answers and putting questions/answers inside 
 var  getQuestion = function(trivia) {
@@ -138,7 +138,7 @@ var getResults = function(){
       resultsDiv.style.backgroundColor = '#f4f1e7';  
       results.innerText = 'You know nothing, Turncloak';
       console.log(resultsDiv);
-
+   
       }   
       
   resultsDiv.appendChild(results);

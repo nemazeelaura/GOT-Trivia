@@ -37,7 +37,6 @@ h1 {
 	color: rgba(11, 5, 5, 1);
 }
 
-/*not working wanted to give space between ? and answer*/
 #trivia1 {
 	padding-bottom: 6px;
 }
@@ -51,6 +50,17 @@ h1 {
 	border: none;
 	color: rgba(11, 5, 5, 1);
 }
+
+#resetBtn {
+	background-color: rgba(175, 169, 147, .90);
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;;
+	font-size: 18px;
+	border: none;
+	color: rgba(11, 5, 5, 1);
+}
+
 button {
 	height: 30px;
 	width: 100px;
@@ -60,11 +70,11 @@ button {
 	display: inline-block;
 }
 
-.resetButton {
+/*.resetButton {
 	width: 100%;
 	align-content: center;
 	padding-bottom: 20px;
-}
+}*/
 
 .gameButton {
 	width: 100%;
