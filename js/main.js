@@ -2,7 +2,7 @@
 // variables to store questions on the page
 var putQuestionOnPage = document.getElementById('quiz');
 var resultsDiv = document.getElementById('results'); 
-var gifDiv = document.getElementById('graphic');           
+var graphicDiv = document.getElementById('graphic');           
 var questionCounter = 0;
 // array to hold the questions
 var allQuestions = [];
@@ -100,7 +100,7 @@ var  getQuestion = function(trivia) {
        
 
         questionCounter++;
-   // }
+        
 };
 
 
@@ -130,9 +130,10 @@ getQuestion(allQuestions[questionCounter]);
 
 // getting results of total correct answers
 // displays final score win/lose scenario plus actual score. I put in empty div tag
-
 var getResults = function(){
 
+      var sound = new Audio('audio/winner.mp3');
+      var sound1 = new Audio('audio/loser.mp3');
       putQuestionOnPage.innerHTML = 'FINAL SCORE' + ' You Had' + ' ' + score + ' Correct';
       putQuestionOnPage.style.backgroundColor = '#f4f1e7';  
 
@@ -140,18 +141,24 @@ var getResults = function(){
 
       resultsDiv.style.backgroundColor = '#f4f1e7';  
       results.innerText = 'You will sit on the Iron Throne';
-      console.log(results);
+       // plays audio on winning
+      sound.play();
         
   } else {
  
       resultsDiv.style.backgroundColor = '#f4f1e7';  
       results.innerText = 'You know nothing, Turncloak';
-      console.log(resultsDiv);
-   
+      // plays audio on losing
+      sound1.play();
+
       }   
       
   resultsDiv.appendChild(results);
 };
+
+
+
+
 
 
 
