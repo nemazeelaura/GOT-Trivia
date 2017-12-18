@@ -1,7 +1,8 @@
 
 // variables to store questions on the page
 var putQuestionOnPage = document.getElementById('quiz');
-var resultsDiv = document.getElementById('results');            
+var resultsDiv = document.getElementById('results'); 
+var gifDiv = document.getElementById('graphic');           
 var questionCounter = 0;
 // array to hold the questions
 var allQuestions = [];
@@ -38,7 +39,7 @@ var sevenQ = new Trivia('The Water Gardens belong to which constituency of Weste
 
 var eightQ = new Trivia('In the first episode, King Robert Baratheon says "In my dreams, I kill him every night." To whom is the King referring and why?', '1. John Arryn', '2. Stannis Baratheon', '3. Rhaegar Targaryen', '3. Rhaegar Targaryen', 'You win, Sit on the Iron Throne', 'You are dead, When you play the Games of Thrones you win or you die, Valar Morghulis');  
 
-var nineQ = new Trivia('At the end of his training, what must an Unsullied kill to prove he has no mercy or weakness?', '1. A newborn slave child', '2. Wildling', '3. Harpy', '1. newborn slave child', 'You win, Sit on the Iron Throne', 'You are dead, When you play the Games of Thrones you win or you die, Valar Morghulis'); 
+var nineQ = new Trivia('At the end of his training, what must an Unsullied kill to prove he has no mercy or weakness?', '1. Slave babies', '2. Wildling child', '3. Harpy', '1. Slave babies', 'You win, Sit on the Iron Throne', 'You are dead, When you play the Games of Thrones you win or you die, Valar Morghulis'); 
 
 var tenQ = new Trivia('said, Say it. Say her name. Say it!', '1. Joffrey Baratheon', '2. Oberyn Martell', '3. Rorge', '2. Oberyn Martell', 'You win, Sit on the Iron Throne', 'You are dead, When you play the Games of Thrones you win or you die, Valar Morghulis');    
 
@@ -132,9 +133,8 @@ getQuestion(allQuestions[questionCounter]);
 
 var getResults = function(){
 
-       putQuestionOnPage.innerHTML = 'FINAL SCORE' + ' You Had' + ' ' + score + ' Correct';
-       putQuestionOnPage.style.backgroundColor = '#f4f1e7';
-       var results = document.createElement('div');
+      putQuestionOnPage.innerHTML = 'FINAL SCORE' + ' You Had' + ' ' + score + ' Correct';
+      putQuestionOnPage.style.backgroundColor = '#f4f1e7';  
 
    if (score >= 10) { 
 
@@ -143,7 +143,7 @@ var getResults = function(){
       console.log(results);
         
   } else {
-      
+ 
       resultsDiv.style.backgroundColor = '#f4f1e7';  
       results.innerText = 'You know nothing, Turncloak';
       console.log(resultsDiv);
@@ -187,3 +187,23 @@ var getResults = function(){
         // var buttonClicked = document.getElementById('btn').addEventListener('click', function() {
         //    document.getElementById('quiz')
         // }
+
+         // var dany = getElementById('gif');
+      //  console.log(dany);
+      // var gimg = createElement('gimg');
+      //  console.log(gimg);
+      // img.src = jsnow.gif;
+      // resultsDiv.appendChild(Dany);
+      // var john = getElementById('gif');
+      //  console.log(John);
+      // var jimg = createElement('jimg');
+      //  console.log(jimg);
+      // img.src = jsnow.gif;
+      // resultsDiv.appendChild(Dany);
+
+
+        // var imgDiv = document.createElement('img');
+        // imgDiv.setAttribute('id', 'gif1'); 
+        // imgDiv.innerHTML = ();
+        // // grapicDiv.appendChild(triviaDiv);
+        // console.log(gifimg);
