@@ -1,3 +1,22 @@
+/*div{
+	padding: 1em;
+	font-size: 2em;
+	border: 1px solid black;
+}
+
+.parent-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.child-item {
+
+}
+
+*/
 
 body {
 	width: 100%;
