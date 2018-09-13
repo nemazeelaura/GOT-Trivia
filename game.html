@@ -5,22 +5,31 @@
 	<title>game</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Spectral+SC" rel="stylesheet">
-
+    <!-- Bootstrap core CSS -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <!-- custom CSS -->
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
 	<!-- 	game page -->
-	<h1>GOT-Trivia</h1>
-	<center><div class="gameButton">
-	<!-- 	resets page -->
-		<button onClick="history.go(0)" id="resetBtn">Reset</button>
-	</div></center>
-	<center><div id="quiz"></div><center>
-	<div id="results"></div>
-	<div id="graphic"></div>
+	<div class="throne">
+		<div class="text-box">
+			<h1>GOT-Trivia</h1>
+			<div class="gameButton">
+			<!-- 	resets page -->
+				<button onClick="history.go(0)" id="resetBtn">Reset</button>
+			</div>
+		</div>
+		<div id="quiz"></div>
+		<div id="results"></div>
+		<div id="graphic"></div>
+	</div>
 	<!-- 	plays different music for win/lose -->
 	<audio src="audio/winner.mp3" preload="auto"></audio>
 	<audio src="audio/loser.mp3" preload="auto"></audio>
   	<script type="text/javascript" src="js/main.js"></script>
+  		<!-- Bootstrap core JavaScript -->
+    <script src="/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
