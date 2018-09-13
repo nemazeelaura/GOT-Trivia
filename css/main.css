@@ -18,10 +18,7 @@ body {
 }
 
 .text-box {
-  	position: absolute;
-	top: 10%;
-	left: 50%;
-	transform: translate(-50%, -50%);
+  margin: 0 auto;
 }
 
 h1 {
@@ -70,11 +67,11 @@ button {
 }
 
 #quiz {
-	width: 30%;
+	width: 60%;
 	height: auto;
 	background: rgba(175, 169, 147, .90);
 	border-radius: 10px;
-	margin: 200px auto 0 auto;
+	margin: 25px auto 0 auto;
 	text-align: left;
 	padding: 20px;
 	color: rgba(11, 5, 5, 1);
@@ -85,7 +82,7 @@ button {
 }
 
 #results {
-	width: 30%;
+	width: 60%;
 	height: auto;
 	background: none;
 	border-radius: 10px;
